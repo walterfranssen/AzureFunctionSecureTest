@@ -19,8 +19,8 @@ namespace TriggerFunction
         private async Task ReadFileFromStorageAccount(string fileName, ILogger log)
         {
             string connectionString = Environment.GetEnvironmentVariable("AzureStorageAccountConnectionString");
-            string container = Environment.GetEnvironmentVariable("securefunction");
-
+            string container = Environment.GetEnvironmentVariable("AzureStorageAccountContainerName");
+   
             var client = new Azure.Storage.Blobs.BlobContainerClient(connectionString, container);
             var blobClient = client.GetBlobClient(fileName);
 
